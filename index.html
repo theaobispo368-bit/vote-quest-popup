@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #fff0f6;
+  padding: 40px 10px;
+}
+
+#openGame {
+  background: #ff69a6;
+  color: white;
+  border: none;
+  padding: 18px 30px;
+  border-radius: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  z-index: 9999;
+  padding: 15px;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 850px;
+  height: 85vh;
+  margin: 2vh auto;
+  position: relative;
+}
+
+#closeGame {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #ff69a6;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.game-container {
+  height: 85%;
+  margin-top: 15px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+</style>
+</head>
+<body>
+
+<button id="openGame">PLAY VOTEQUEST</button>
+
+<div id="popup">
+  <div class="popup-content">
+    <button id="closeGame">✕</button>
+    <h2>VOTE MYSTERY: Crack the Choice!</h2>
+
+    <div class="game-container">
+      <iframe
+        src="https://view.genially.com/6af196c1a557eff3dfb6117c"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+const popup = document.getElementById("popup");
+
+document.getElementById("openGame").onclick = function() {
+  popup.style.display = "block";
+};
+
+document.getElementById("closeGame").onclick = function() {
+  popup.style.display = "none";
+};
+
+popup.onclick = function(event) {
+  if (event.target === popup) {
+    popup.style.display = "none";
+  }
+};
+</script>
+
+</body>
+</html>
